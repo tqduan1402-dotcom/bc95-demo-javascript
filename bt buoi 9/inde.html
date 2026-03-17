@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="bg-gray-100 p-6">
+    <div class="mx-auto max-w-3xl bg-white rounded-lg p-6">
+        <h1 class="text-center text-green-500 text-2xl mb-4">DOM exercise</h1>
+
+        <!-- Bài 1: Tính lương nhân viên -->
+        <div class="bg-blue-200 rounded-lg">
+            <h2 class="font-bold text-indigo-500 mb-2">Bài 1: Tính lương nhân viên</h2>
+            <label class="block text-sm font-medium mb-1">Số ngày bạn đã làm: </label>
+            <input
+                type="text"
+                id="input-day"
+                placeholder="Nhập số ngày bạn đã làm: "
+                class="w-full border border-gray-600 rounded p-3">
+                <!-- thẻ p để hiển thị lỗi nếu có -->
+                <p id="result-luong" class="bg-red-200 text-white p-3 rounded-lg mt-1"></p>
+                <button id="btn-luong" class="bg-blue-500 text-white p-2 rounded-lg mt-2">
+                Tính lương</button>
+                
+        </div>
+
+
+
+        <!-- Bài 2: Tính giá trị trung bình của 5 số và xuất ra màn hình -->
+        <div class="bg-blue-200 rounded-lg mt-6 p-4">
+            <h2 class="font-bold text-indigo-500 mb-2">Bài 2: Tính trung bình nhập vào 5 số thực</h2>
+            <label class="block text-sm font-medium mb-1">Mời bạn nhập số từng ô: </label>
+            <input
+                type="text"
+                id="input-num1"
+                placeholder="Nhập số ô thứ 1 : "
+                class="w-full border border-gray-600 rounded p-3">
+            <input
+                type="text"
+                id="input-num2"
+                placeholder="Nhập số ô thứ 2 : "
+                class="w-full border border-gray-600 rounded p-3">
+            <input
+                type="text"
+                id="input-num3"
+                placeholder="Nhập số ô thứ 3: "
+                class="w-full border border-gray-600 rounded p-3">
+            <input
+                type="text"
+                id="input-num4"
+                placeholder="Nhập số ô thứ 4 : "
+                class="w-full border border-gray-600 rounded p-3">
+            <input
+                type="text"
+                id="input-num5"
+                placeholder="Nhập số ô thứ 5 : "
+                class="w-full border border-gray-600 rounded p-3">
+                <!-- thẻ p để hiển thị lỗi nếu có -->
+                <p id="result-trungbinh" class="bg-red-200 text-white p-3 rounded-lg mt-1"></p>
+                <button id="btn-trungbinh" class="bg-blue-500 text-white p-2 rounded-lg mt-2">
+                Tính trung bình</button>
+                
+        </div>
+
+
+        <!-- Bài 3: Quy đổi tiền USD sang VND -->
+        <div class="bg-blue-200 rounded-lg mt-6 p-4">
+            <h2 class="font-bold text-indigo-500 mb-2">Bài 3: Tính và xuất ra số tiền sau quy đổi VND</h2>
+            <label class="block text-sm font-medium mb-1">Chuyển đổi USD -> VND </label>
+            <input
+                type="text" 
+                id="input-money"
+                placeholder="Nhập số tiền USD bạn cẩn chuyển sang VND: "
+                class="w-full border border-gray-600 rounded p-3">
+                <!-- thẻ p để hiển thị lỗi nếu có -->
+                <p id="result-vnd" class="bg-red-200 text-white p-3 rounded-lg mt-1"></p>
+                <button id="btn-vnd" class="bg-blue-500 text-white p-2 rounded-lg mt-2">
+                Chuyển đổi tiền</button>
+                
+        </div>
+
+
+         <!-- Bài 4: tính chu vi, diện tích hình chữ nhật -->
+          <div class="bg-blue-200 rounded-lg mt-6 p-4">
+            <div>
+                <label class="block text-sm font-medium mb-1">Chiều dài: </label>
+                <input
+                    type="text"
+                    id="input-width"
+                    placeholder="Nhập chiều dài: "
+                    class="w-full border border-gray-600 rounded p-3"
+                >
+                <!-- thẻ p để hiển thị lỗi nếu có -->
+                <p class="hidden bg-red-200 text-white p-3 rounded-lg mt-1"></p>
+            </div>
+
+            <div>
+                <label class="block text-sm font-medium mb-1 mt-2">Chiều rộng: </label>
+                <input
+                    type="text"
+                    id="input-height"
+                    placeholder="Nhập chiều rộng: "
+                    class="w-full border border-gray-600 rounded p-3"
+                >
+                <!-- thẻ p để hiển thị lỗi nếu có -->
+                <p id="result-hcn" class="bg-red-200 text-white p-3 rounded-lg mt-1"></p>
+            </div>
+
+            <button id="btn-hcn" class="bg-blue-500 text-white p-2 rounded-lg mt-2">
+                Tính toán
+            </button>
+
+         </div>
+
+         <!-- Bài 5: Tính tổng số có 2 chữ số -->
+          <div class="bg-blue-200 rounded-lg mt-6 p-4">
+            <div>
+                <label class="block text-sm font-medium mb-1">Mời bạn nhập số có 2 chữ số: </label>
+                <input
+                    type="text"
+                    id="input-number"
+                    placeholder="Nhập số có 2 chữ số: "
+                    class="w-full border border-gray-600 rounded p-3"
+                >
+                <!-- thẻ p để hiển thị lỗi nếu có -->
+                <p class="hidden bg-red-200 text-white p-3 rounded-lg mt-1"></p>
+            </div>
+
+
+            <button id="btn-calc" class="bg-blue-500 text-white p-2 rounded-lg mt-2">
+                Tính toán
+            </button>
+
+            <p id="result-calc" class="bg-blue-200 p-3 rounded-lg mt-1"></p>
+
+         </div>
+
+
+    </div>
+
+
+    <!-- thứ tự import file js -->
+     <!-- những file js ở cuối sẽ được ưu tiên nhất -->
+      <!-- VD: để các file js của thư viên lên đầu, file js của mình sẽ để ở cuối -->
+    <script src="js/Bai_1.js"></script>
+    <script src="js/bai_2.js"></script>
+    <script src="js/bai_3.js"></script>
+    <script src="js/bai_4.js"></script>
+    <script src="js/Bai_5.js"></script>
+</body>
+</html>

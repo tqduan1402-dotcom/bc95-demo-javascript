@@ -11,7 +11,7 @@ const elementBai4 = {
     errorMaKH: document.getElementById("errorMaKH"),
     errorLoaiKH: document.getElementById("errorLoaiKH"),
     errorSoketNoi: document.getElementById("errorSoKetNoi"),
-    errorSoKenh: document.getElementById("errorSoKenh")
+    errorSoKenh: document.getElementById("errorSoKenhCaoCap")
 }
 
 // OBJECT LƯU GIÁ TRỊ
@@ -53,26 +53,26 @@ const showErrorBai4 = (errElement, message) => {
     errElement.classList.remove("hidden")
 }
 
-const validationInputBai4 = (maKH, loaiKH, soKetNoi, soKenh) => {
+const validationInputBai4 = (maKH, loaiKH, soKetNoi, soKenhCaoCap) => {
     let isValid = true
 
     // reset lỗi
     // hideErrorBai4(elementBai4.errorMaKH)
     // hideErrorBai4(elementBai4.errorLoaiKH)
     // hideErrorBai4(elementBai4.errorSoketNoi)
-    // hideErrorBai4(elementBai4.errorSoKenh)
+    // hideErrorBai4(elementBai4.errorSoKenhCaoCap)
 
     // BTVN
 }
 
-const tinhHoaDonNhaDan = (soKenh) => {
+const tinhHoaDonNhaDan = (soKenhCaoCap) => {
     const gia = BANG_GIA.nhaDan
 
-    const tongTien = gia.phiXuLy + gia.phiDichVu + (soKenh * gia.phiKenhCaoCap)
+    const tongTien = gia.phiXuLy + gia.phiDichVu + (soKenhCaoCap * gia.phiKenhCaoCap)
     return tongTien
 }
 
-const tinhHoaDonDoanhNghiep = (soKetNoi, soKenh) => {
+const tinhHoaDonDoanhNghiep = (soKetNoi, soKenhCaoCap) => {
     const gia = BANG_GIA.doanhNghiep
 
     let phiDichVu = gia.phiDichVu10Dau // default = 75$ (cho 10 kết nối đầu)
@@ -84,7 +84,7 @@ const tinhHoaDonDoanhNghiep = (soKetNoi, soKenh) => {
         // phiDichVu = 75 + (5 * 5) = 100
     }
 
-    const tongTien = gia.phiXuLy + phiDichVu + (soKenh * gia.phiKenhCaoCap)
+    const tongTien = gia.phiXuLy + phiDichVu + (soKenhCaoCap * gia.phiKenhCaoCap)
     return tongTien
 }
 
@@ -96,9 +96,9 @@ elementBai4.form.addEventListener("submit", (event) => {
     const maKH = elementBai4.maKH.value
     const loaiKH = elementBai4.loaiKH.value
     const soKetNoi = Number(elementBai4.soKetNoi.value)
-    const soKenh = Number(elementBai4.soKenh.value)
+    const soKenhCaoCap = Number(elementBai4.soKenh.value)
 
-    // const isValid = validationInputBai4(maKH, loaiKH, soKetNoi, soKenh)
+    // const isValid = validationInputBai4(maKH, loaiKH, soKetNoi, soKenhCaoCap)
     // if (!isValid) {
     //     return
     // }
@@ -106,11 +106,12 @@ elementBai4.form.addEventListener("submit", (event) => {
     // tính hóa đơn - hiển thị kết quả -> BTVN
     let tongTien = 0
     if (loaiKH === "nhaDan") {
-        tongTien = tinhHoaDonNhaDan(soKenh)
+        tongTien = tinhHoaDonNhaDan(soKenhCaoCap)
     } else {
-        tongTien = tinhHoaDonDoanhNghiep(soKetNoi, soKenh)
+        tongTien = tinhHoaDonDoanhNghiep(soKetNoi, soKenhCaoCap)
     }
 
     console.log("tongTien", tongTien)
+    elementBai4.ketQua.classList.remove("hidden");
     elementBai4.ketQua.innerText = `Mã khách hàng: ${maKH} - Tổng tiền: $${tongTien}`
 })

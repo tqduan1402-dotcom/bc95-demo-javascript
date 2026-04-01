@@ -75,8 +75,8 @@
         </section>
 
 
-        <!-- bài 3: tính tiền điện-->
-         <section>
+        <!-- bài 2: tính tiền điện-->
+         <section class="bg-gray-100 rounded-lg shadow-lg p-6 mt-5">
             <h1 class="text-3xl font-bold text-center mb-5 py-2">Tính tiền điện</h1>
             <div class="space-y-4">
         <div>
@@ -88,13 +88,58 @@
             <input type="number" id="kw" class="w-full p-2 border rounded-sm px-3 py-2" placeholder="Nhập số kW">
         </div>
         <button onclick="tinhTienDien()" class="w-full bg-blue-500 rounded-md text-white px-4 py-2 hover:bg-blue-600">
-            Tính Tiền
+            Tính Tiền Điện
         </button>
     </div>
 
     <div id="result" class="mt-6 p-4 bg-blue-50 dark:bg-slate-700 rounded-lg hidden text-blue-800 dark:text-blue-200">
         </div>
          </section>
+
+
+
+
+         <!-- bài 3: tính thuế thu nhập cá nhân -->
+          <section class="bg-gray-100 rounded-lg shadow-lg p-6 mt-5">
+            <h1 class="text-3xl font-bold text-center mb-5 py-2">Tính thuế thu nhập cá nhân</h1>
+            <form id="formThue" class="space-y-4">
+                <div>
+                    <label class="block font-medium mb-1">Họ và Tên</label>
+                    <input
+                        type="text"
+                        id="txtHoTen"
+                        class="w-full border rounded px-3 py-2"
+                        placeholder="Mời bạn nhập họ tên"
+                        required
+                    >
+                </div>
+
+                <div class="grid grid-cols-2 gap-4">
+                <div>
+                    <label class="block font-medium mb-1">Tổng thu nhập năm</label>
+                    <input type="number" id="numTongThuNhap"  
+                           class="w-full border rounded px-3 py-2"
+                           placeholder="Ví dụ: 120"
+                           required
+                           >
+                    <p>Đơn vị: triệu</p>
+                </div>
+                <div>
+                    <label class="block font-medium mb-1">Số người phụ thuộc</label>
+                    <input type="number"id="numPhuThuoc"
+                           class="w-full border rounded px-3 py-2"
+                           placeholder="Ví dụ: 2"
+                           required>
+                </div>
+            </div>
+
+            <button type="submit" class="w-full bg-blue-500 rounded-md text-white px-4 py-2 hover:bg-blue-600">
+                Tính tiền thuế
+            </button>
+            </form>
+            </form>
+            <p id="KetQua" class="hidden mt-4 font-bold"></p>
+          </section>
 
 
 
@@ -162,6 +207,7 @@
         </section>
     </main>
     <script src="../js/bai1.js"></script>
+    <script src="../js/bai2.js"></script>
     <script src="../js/bai3.js"></script>
     <script src="../js/bai4.js"></script>
   </body>
